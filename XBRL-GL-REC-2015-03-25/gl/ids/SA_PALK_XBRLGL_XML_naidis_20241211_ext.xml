@@ -1,0 +1,906 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Andmepõhise Aruandluse SA palga- ja tööjõukulude näidisaruande fail XBRL Global Ledger standardi baasil Version 2017.1.0 -->
+<!-- This file is the example of representing job cost information based on XBRL GL standard Version 2017.1.0 -->
+<!-- The "root" of every XBRL file ("instance document") is xbrl. -->
+<xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xbrll="http://www.xbrl.org/2003/linkbase" xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2015-03-25 ../plt/case-c-b-m-u-t/gl-plt-all-2015-03-25.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:gl-usk="http://www.xbrl.org/int/gl/usk/2015-03-25"
+	xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25"
+	xmlns:gl-ext="http://www.xbrl.org/int/gl/ext/2015-03-25"
+	xmlns:iso639="http://www.xbrl.org/2005/iso639"
+	xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
+	xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2015-03-25"
+	xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2015-03-25"
+	xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2015-03-25">
+	<xbrll:schemaRef xlink:href="../plt/case-c-b-m-e/gl-plt-2015-03-25.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
+	<!-- Vastavalt XBRL 2.1 spetsifikatsioonile on Contexts osa kohustuslik. -->
+	<xbrli:context id="now">
+		<!-- Aruande esitaja äriregistrikood (kelle osas andmeid esitatakse). -->
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.ariregister.rik.ee">10001234</xbrli:identifier>
+		</xbrli:entity>
+		<!-- Faili loomise kuupäev -->
+		<xbrli:period>
+			<xbrli:instant>2024-11-01</xbrli:instant>
+		</xbrli:period>
+	</xbrli:context>
+	<!-- Mõõtühikutena vaadeldakse nii valuutat kui ka muid kokkulepitud mõõtühikuid -->
+	<xbrli:unit id="eur">
+		<xbrli:measure>iso4217:EUR</xbrli:measure>
+	</xbrli:unit>
+	<xbrli:unit id="NotUsed">
+		<xbrli:measure>pure</xbrli:measure>
+	</xbrli:unit>
+	<!-- Siit algab XBRL GL osa -->
+	<gl-cor:accountingEntries>
+		<!-- Dokumendi info -->
+		<gl-cor:documentInfo>
+			<!-- XBRL GL standardist lähtuv valik. Palgaandmete puhul kasutada tehingutüübiks "other" (muu). -->
+			<gl-cor:entriesType contextRef="now">other</gl-cor:entriesType>
+			<!-- Aruande unikaalne tunnus, mille peab tagama andmeesitaja. Tuleb esitada järgneva struktuuriga: asutuse äriregistrikood (kelle andmeid esitatakse) + aruande kuupäev + kellaaeg -->
+			<gl-cor:uniqueID contextRef="now">10001234-2024-12-15T09:36:51:554</gl-cor:uniqueID>
+			<!-- Aruandele kehtestatud keeleks on eesti keel -->
+			<gl-cor:language contextRef="now">iso639:et</gl-cor:language>
+			<!--Aruande koostamise kuupäev -->
+			<gl-cor:creationDate contextRef="now">2024-12-15</gl-cor:creationDate>
+			<!--Aruande looja -->
+			<gl-bus:creator contextRef="now">Testettevõte</gl-bus:creator>
+			<!--Aruande selgitus, valikuline väli -->
+			<gl-cor:entriesComment contextRef="now">SA näidis palga ja tööjõu Andmepõhise Aruandluse tarbeks</gl-cor:entriesComment>
+			<!-- Aruandeperioon, algus- ja lõpukuupäev -->
+			<gl-cor:periodCoveredStart contextRef="now">2024-11-01</gl-cor:periodCoveredStart>
+			<gl-cor:periodCoveredEnd contextRef="now">2024-11-30</gl-cor:periodCoveredEnd>
+			<!--Majandustarkvara või infosüsteemi nimetus, milles andmeid kajastatakse. -->
+			<gl-bus:sourceApplication contextRef="now">Raamatupidamistarkvara Test</gl-bus:sourceApplication>
+			<!--Aruandes kasutatavaks valuutaks on EUR. -->
+			<gl-muc:defaultCurrency contextRef="now">iso4217:eur</gl-muc:defaultCurrency>
+		</gl-cor:documentInfo>
+		<!-- Järgneb asutuse info blokk -->
+		<gl-cor:entityInformation>
+			<!-- Asutust tuvastav tunnus (kelle andmeid esitatakse). Palgasektsioonis kokkuleppeliselt äriregistrikood. -->
+			<gl-bus:organizationIdentifiers>
+				<gl-bus:organizationIdentifier contextRef="now">10001234</gl-bus:organizationIdentifier>
+				<!-- Tunnust täpsustav selgitus, mis ütleb, mis tunnusega on tegu. Kasutada antud struktuuriga väärtust. -->
+				<gl-bus:organizationDescription contextRef="now">ARIREGISTRIKOOD</gl-bus:organizationDescription>
+				<!-- EXTENSION for organization id type-->
+				<gl-ext:identifierCodeType contextRef="now">registration-number</gl-ext:identifierCodeType>
+				<!-- EXTENSION end-->
+			</gl-bus:organizationIdentifiers>
+		</gl-cor:entityInformation>
+		<!-- Antud päis (andmesektsioon) on mõeldud tekkepõhiste palgakulude esitamiseks (SA). Näidis on tehtud vastavalt XML lähteandmete näidisele. -->
+		<!-- Sektsioonis EE0101001 on igas kirjes kohustuslikud väljad/klassifikaatorid: amount, identifierCode (või selle puudumisel eesnimi, perekonnanimi, sugu ja sünniaeg), TKL2017ap, TOOTLIIK2017ap, AK2008ap ja EE_ADS (kui töökoha asukoht on Eesti) või RTK2T2013ap (kui töökoha asukoht on välismaa). -->
+		<!-- Teatud kirjetes on vajalik esitada ka täiendavad mõõdetavad (measurable) andmeväljad. Koos TKL2017ap A11001 elemendiga on vaja esitada SYNDMUS2017ap + alguskuupäev ning sõltuvalt tingimustest ka lõpukuupäev. Lisaks on vaja esitada A11001 elemendiga ka tööajamäär. -->
+		<!-- Teatud tööjõukulu liikide koodidega (A11001, A11003, A11006, A11007, A12004) on vajalik esitada ka mõõdetav aeg (tundides/päevades). Täpsem info on toodud välja taksonoomias TKL2017ap_info sheedil ning kommentaaridena antud näidisfailis. -->
+		<!-- Klassifikaatori elementide koodid on tõusutundlikud. -->
+		<gl-cor:entryHeader>
+			<!--EntryNumber on päise unikaalne kood (lähtuvalt AA_SEKTSIOONID2022ap klassifikaatorist). -->
+			<gl-cor:entryNumber contextRef="now">EE0101001</gl-cor:entryNumber>
+			
+			<!-- EXTENSION for version and approval-->
+			<gl-ext:version contextRef="now">1.0</gl-ext:version> 
+			<gl-ext:isApproved contextRef="now">true</gl-ext:isApproved>	
+			<!-- EXTENSION end-->
+			
+			<!-- EXTENSION for multiple data sources-->
+			<gl-ext:sourceId contextRef="now">1</gl-ext:sourceId>
+			<!-- EXTENSION end-->
+			
+			<!-- Iga eraldi esitatav raha summa nõuab eraldi kirjendi detaili (entryDetail), mille osas on vajalik esitada ka täiendav info. -->
+			<gl-cor:entryDetail>
+				<!-- Valikuline väli. Kirjesisene unikaalne täiendav tunnus, mis määratakse soovi korral andmeesitaja (tarkvara) poolt, nt kirjega seonduv sisemine tunnus. -->
+				<gl-cor:lineNumber contextRef="now">MHT567</gl-cor:lineNumber>
+				<!-- Kirje rea number on ühes päises olevate kirjete järjekorranumber (numbriline väärtus). -->
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">1</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<!--AccountMainId märgendina kajastatakse kirje majanduslik sisu lähtuvalt MAJANDUSLIKSISU2024ap klassifikaatori elementidest. Element 521012 = Palgakulu. -->
+					<gl-cor:accountMainID contextRef="now">521012</gl-cor:accountMainID>
+					<!-- Alamkontod ehk dimensioonid on vajalikud info lahterdamiseks soovitud klassifikaatorite abil -->
+					<gl-cor:accountSub>
+						<!-- Esimene dimensioon on tööjõukulude klassifitseerimine. Iga töötaja puhul esitada alati kood A11001 (regulaarne rahaline põhitöötasu), mille kaudu esitada ka tööajamäär ning kuu normtunnid. Kui põhitöötasu mingis kuus välja ei makstud, esitada summaks 0. -->
+						<gl-cor:accountSubID contextRef="now">A11001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">51200001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000728</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">1000</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<!--Siin määratakse tehingu osapooled - tööandja, töötaja (edaspidiseks ka ostja, müüja, lepingupartner jne). -->
+					<!--SA palgasektsioonis esitatakse antud välja all isikukood või mitteresidendikood. -->
+					<gl-cor:identifierCode contextRef="now">2020-12-01</gl-cor:identifierCode>
+					<!-- EXTENSION start-->
+					<gl-ext:identifierCodeType contextRef="now">birth-date</gl-ext:identifierCodeType>
+					<gl-ext:transactionPartyType contextRef="now">employee</gl-ext:transactionPartyType>
+					<gl-ext:additionalCategory contextRef="now">Free form additional category description</gl-ext:additionalCategory>
+					<!-- EXTENSION end-->
+					<gl-cor:identifierDescription contextRef="now">Mati Maasikas</gl-cor:identifierDescription>	
+				</gl-cor:identifierReference>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">12345678</gl-cor:identifierCode>
+					<!-- EXTENSION start-->
+					<gl-ext:identifierCodeType contextRef="now">registration-number</gl-ext:identifierCodeType>
+					<!-- EXTENSION end-->
+					<gl-cor:identifierDescription contextRef="now">OÜ Puuviljad</gl-cor:identifierDescription>
+				</gl-cor:identifierReference>
+				<gl-bus:measurable>
+					<!-- Esimese koguseline näitajana tuleb esitada töötamise ajaline info, seda seotult koos SYNDMUS2017ap klf TOR01 elemendiga. -->
+					<gl-bus:measurableID contextRef="now">TOR01</gl-bus:measurableID>
+					<gl-bus:measurableIDSchema contextRef="now">SYNDMUS2017ap</gl-bus:measurableIDSchema>
+					<!-- Alguskuupäeva all tuua välja töösuhte alguskuupäev. -->
+					<gl-bus:measurableStartDateTime contextRef="now">2017-05-07</gl-bus:measurableStartDateTime>
+					<!-- Kui töötaja töötab tähtajalise lepinguga, siis tuua lõpukuupäeva all välja tähtajalise lepingu lõpukuupäev (toodud välja ka antud näites). Kui töösuhe lõpeb aruandekuul tähtajatu lepinguga ning see ei võrdu aruandekuu lõpuga, siis tuua välja vastav lõpukuupäev. -->
+					<gl-bus:measurableEndDateTime contextRef="now">2024-12-31</gl-bus:measurableEndDateTime>
+				</gl-bus:measurable>
+				<!-- Kui koguseliste näitajate osas klassifikaatorit ei looda, siis tekitatakse valikutest loend ning loendi kood tuleb esitada measurableDescription väljal. -->
+				<gl-bus:measurable>
+					<!-- Koos põhitöötasu A11001 elemendiga tuleb esitada ka töötaja tööajamäär. -->
+					<gl-bus:measurableDescription contextRef="now">TOOAJAMAAR</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="2">1</gl-bus:measurableQuantity>
+				</gl-bus:measurable>
+				<gl-bus:measurable>
+					<!-- Koos A11001 elemendiga on vajalik esitada tegelikult töötatud tunnid (v.a ületunnid, mille osas tuleb esitada tunnid eraldi koos A11003 elemendiga). -->
+					<gl-bus:measurableDescription contextRef="now">MOODETAV_AEG</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="2">144</gl-bus:measurableQuantity>
+				</gl-bus:measurable>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">2</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521012</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<!-- Antud kirjes esitatakse sama töötaja kohta info ületunnitöö osas. -->
+						<gl-cor:accountSubID contextRef="now">A11003</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">51200001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000728</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">200</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">EE34801010100</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+				<gl-bus:measurable>
+					<!-- Koos A11003 elemendiga tuleb esitada ka ületundide osas töötatud tunnid. -->
+					<gl-bus:measurableDescription contextRef="now">MOODETAV_AEG</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="2">20</gl-bus:measurableQuantity>
+				</gl-bus:measurable>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">3</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521012</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<!-- Antud kirjes esitatakse sama töötaja kohta info öötöö lisatasu osas. Antud tööjõukulu liigi puhul ei ole vaja mõõdetavat aega esitada. -->
+						<gl-cor:accountSubID contextRef="now">A11008</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">51200001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000728</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">50</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">EE34801010100</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">4</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521012</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<!-- Antud kirjes esitatakse sama töötaja kohta info riigipühal töötamise lisatasu osas. Antud tööjõukulu liigi puhul ei ole vaja mõõdetavat aega esitada. -->
+						<gl-cor:accountSubID contextRef="now">A11004</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">51200001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000728</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">25</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">EE34801010100</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">5</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521012</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<!-- Antud kirjes esitatakse sama töötaja kohta info ebaregulaarse preemia osas. Antud tööjõukulu liigi puhul ei ole vaja mõõdetavat aega esitada. -->
+						<gl-cor:accountSubID contextRef="now">A11005</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">51200001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000728</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">100</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">EE34801010100</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">6</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<!-- MAJANDUSLIKSISU2024ap element 521022 = Sotsiaalmaks ja tööandja töötuskindlustusmakse. -->
+					<gl-cor:accountMainID contextRef="now">521022</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<!-- Antud kirjes esitatakse sama töötaja kohta info tööandja töötuskindlustusmakse osas. Antud tööjõukulu liigi puhul ei ole vaja mõõdetavat aega esitada. -->
+						<gl-cor:accountSubID contextRef="now">A12002</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">51200001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000728</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">11</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">EE34801010100</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">7</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521022</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<!-- Antud kirjes esitatakse sama töötaja kohta info sotsiaalmaksu osas. Antud tööjõukulu liigi puhul ei ole vaja mõõdetavat aega esitada. -->
+						<gl-cor:accountSubID contextRef="now">A12001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">51200001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000728</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">453.75</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">EE34801010100</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">8</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521012</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<!-- Antud kirjes esitatakse sama töötaja kohta info tasustamata töölt eemal viibitud aja osas. Antud elemendi puhul on summa 0. -->
+						<gl-cor:accountSubID contextRef="now">A13001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">51200001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000728</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">0.00</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">EE34801010100</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+				<gl-bus:measurable>
+					<!-- Koos A13001 elemendiga tuleb esitada ka kalendripäevad. -->
+					<gl-bus:measurableDescription contextRef="now">MOODETAV_AEG</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="2">2</gl-bus:measurableQuantity>
+				</gl-bus:measurable>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<!-- Siit algab info uue töötaja osas. -->
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">9</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521012</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">A11001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">53210001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000795</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<!-- MRR koodiga töötaja puhul on vajalik esitada ka sugu. 2 = naine. -->
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">2</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">SUGU2022ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">400</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">A1111111111</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+				<gl-bus:measurable>
+					<gl-bus:measurableID contextRef="now">TOR01</gl-bus:measurableID>
+					<gl-bus:measurableIDSchema contextRef="now">SYNDMUS2017ap</gl-bus:measurableIDSchema>
+					<gl-bus:measurableStartDateTime contextRef="now">1998-02-18</gl-bus:measurableStartDateTime>
+				</gl-bus:measurable>
+				<gl-bus:measurable>
+					<gl-bus:measurableDescription contextRef="now">TOOAJAMAAR</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="2">0.5</gl-bus:measurableQuantity>
+				</gl-bus:measurable>
+				<gl-bus:measurable>
+					<gl-bus:measurableDescription contextRef="now">MOODETAV_AEG</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="2">48</gl-bus:measurableQuantity>
+				</gl-bus:measurable>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">10</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521012</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">A11007</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">53210001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000795</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">2</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">SUGU2022ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">150</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">A1111111111</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+				<gl-bus:measurable>
+					<!-- Koos A11007 elemendiga tuleb esitada ka tunnid, mille osas maksit tasu mittetöötatud aja eest. -->
+					<gl-bus:measurableDescription contextRef="now">MOODETAV_AEG</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="2">40</gl-bus:measurableQuantity>
+				</gl-bus:measurable>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">11</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521022</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">A12002</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">53210001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000795</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">2</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">SUGU2022ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">4.40</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">A1111111111</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">12</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521022</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">A12001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">53210001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000795</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">2</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">SUGU2022ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">181.50</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">A1111111111</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">13</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521012</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">A11001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">22121901</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">LV,RR_tookoha_asukoht</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">RTK2T2013ap,RIIGIROLL2022ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">160</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">EE46805010200</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+				<gl-bus:measurable>
+					<gl-bus:measurableID contextRef="now">TOR01</gl-bus:measurableID>
+					<gl-bus:measurableIDSchema contextRef="now">SYNDMUS2017ap</gl-bus:measurableIDSchema>
+					<gl-bus:measurableStartDateTime contextRef="now">2001-08-01</gl-bus:measurableStartDateTime>
+				</gl-bus:measurable>
+				<gl-bus:measurable>
+					<gl-bus:measurableDescription contextRef="now">TOOAJAMAAR</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="2">1</gl-bus:measurableQuantity>
+				</gl-bus:measurable>
+				<gl-bus:measurable>
+					<gl-bus:measurableDescription contextRef="now">MOODETAV_AEG</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="2">176</gl-bus:measurableQuantity>
+				</gl-bus:measurable>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">14</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521012</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">A11007</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">22121901</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">LV,RR_tookoha_asukoht</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">RTK2T2013ap,RIIGIROLL2022ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">40</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">EE46805010200</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+				<gl-bus:measurable>
+					<!-- Koos A11007 elemendiga tuleb esitada ka tunnid, mille osas maksit tasu mittetöötatud aja eest. -->
+					<gl-bus:measurableDescription contextRef="now">MOODETAV_AEG</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="2">4</gl-bus:measurableQuantity>
+				</gl-bus:measurable>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">15</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521012</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">A11006</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">22121901</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">LV,RR_tookoha_asukoht</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">RTK2T2013ap,RIIGIROLL2022ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">1750</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">EE46805010200</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+				<gl-bus:measurable>
+					<!-- Koos A11006 elemendiga tuleb esitada ka (eri)puhkusepäevade arv. -->
+					<gl-bus:measurableDescription contextRef="now">MOODETAV_AEG</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="2">28</gl-bus:measurableQuantity>
+				</gl-bus:measurable>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">16</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521022</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">A12001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">22121901</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">LV,RR_tookoha_asukoht</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">RTK2T2013ap,RIIGIROLL2022ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">643.50</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">EE46805010200</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">17</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521022</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">A12002</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">22121901</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">LV,RR_tookoha_asukoht</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">RTK2T2013ap,RIIGIROLL2022ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">15.60</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">EE46805010200</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">18</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521012</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">A11001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">22122901</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000784</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<!-- Sünnikuupäevaga isikutega puhul on vajalik esitada ka töötaja sugu. 1 = mees. -->
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">SUGU2022ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">1200</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now"/>
+					<!--Kui isikukood puudub, siis siin kuvada sünnikuupäev ja ülalpool accountsub all ka sugu. Lisaks tuua allpool eraldi välja ka eesnimi ja perekonnanimi-->
+					<gl-cor:identifierExternalReference>
+						<gl-cor:identifierAuthorityVerificationDate contextRef="now">1985-12-09</gl-cor:identifierAuthorityVerificationDate>
+					</gl-cor:identifierExternalReference>
+					<gl-cor:identifierContactInformationStructure>
+						<gl-cor:identifierContactLastName contextRef="now">Lake</gl-cor:identifierContactLastName>
+						<gl-cor:identifierContactFirstName contextRef="now">John</gl-cor:identifierContactFirstName>
+					</gl-cor:identifierContactInformationStructure>
+				</gl-cor:identifierReference>
+				<gl-bus:measurable>
+					<gl-bus:measurableID contextRef="now">TOR01</gl-bus:measurableID>
+					<gl-bus:measurableIDSchema contextRef="now">SYNDMUS2017ap</gl-bus:measurableIDSchema>
+					<gl-bus:measurableStartDateTime contextRef="now">2017-01-04</gl-bus:measurableStartDateTime>
+				</gl-bus:measurable>
+				<gl-bus:measurable>
+					<gl-bus:measurableDescription contextRef="now">TOOAJAMAAR</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="2">1</gl-bus:measurableQuantity>
+				</gl-bus:measurable>
+				<gl-bus:measurable>
+					<gl-bus:measurableDescription contextRef="now">MOODETAV_AEG</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="2">160</gl-bus:measurableQuantity>
+				</gl-bus:measurable>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">19</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521012</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">A11001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">33430001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000784</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">0</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">EE47805010200</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+				<gl-bus:measurable>
+					<gl-bus:measurableID contextRef="now">TOR01</gl-bus:measurableID>
+					<gl-bus:measurableIDSchema contextRef="now">SYNDMUS2017ap</gl-bus:measurableIDSchema>
+					<gl-bus:measurableStartDateTime contextRef="now">2008-10-01</gl-bus:measurableStartDateTime>
+					<gl-bus:measurableEndDateTime contextRef="now">2024-11-26</gl-bus:measurableEndDateTime>
+				</gl-bus:measurable>
+				<gl-bus:measurable>
+					<gl-bus:measurableDescription contextRef="now">TOOAJAMAAR</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="2">1</gl-bus:measurableQuantity>
+				</gl-bus:measurable>
+				<gl-bus:measurable>
+					<gl-bus:measurableDescription contextRef="now">MOODETAV_AEG</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="2">0</gl-bus:measurableQuantity>
+				</gl-bus:measurable>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">20</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521012</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">A12004</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">33430001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000784</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">60</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">EE47805010200</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+				<gl-bus:measurable>
+					<!-- Koos A12004 elemendiga tuleb esitada ka hüvitatud päevade arv. -->
+					<gl-bus:measurableDescription contextRef="now">MOODETAV_AEG</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="2">3</gl-bus:measurableQuantity>
+				</gl-bus:measurable>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">21</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521012</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">A12006</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">33430001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000784</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">1200</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">EE47805010200</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">22</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521022</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">A12001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">33430001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000784</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">396.00</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">EE47805010200</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">23</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">521022</gl-cor:accountMainID>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">A12001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TKL2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">33430001</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">AK2008ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">OV00000784</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">EE_ADS</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">1</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">TOOTLIIK2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">9.60</gl-cor:amount>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">EE47805010200</gl-cor:identifierCode>
+				</gl-cor:identifierReference>
+			</gl-cor:entryDetail>
+		</gl-cor:entryHeader>
+		<!-- Antud päis on mõeldud muude tööjõuandmete esitamiseks asutuse tasandil (SA). Esimeses kirjes tuleb esitada info vabade ametikohtade osas (measurable plokis) ning teiste näitajate osas MUUPTJINFO2017ap kaudu accountSub plokis. MTI-de osas tuleb esitada infot vaid juhul, kui aruandeperioodil nende osas tehinguid esines. Tehingute puudumisel ei ole vaja esitada 0 summat, kuid seda võib teha. -->
+		<gl-cor:entryHeader>
+			<gl-cor:entryNumber contextRef="now">EE0102001</gl-cor:entryNumber>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">1</gl-cor:lineNumberCounter>
+				<gl-bus:measurable>
+					<!-- Vabade ametikohtade osas on info esitamine kohustuslik. -->
+					<gl-bus:measurableDescription contextRef="now">VABAD_AMETIKOHAD</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">1</gl-bus:measurableQuantity>
+				</gl-bus:measurable>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">2</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">MTI_002</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">MUUPTJINFO2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">0</gl-cor:amount>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">3</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">MTI_003</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">MUUPTJINFO2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">0</gl-cor:amount>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">4</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">MTI_004</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">MUUPTJINFO2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">0</gl-cor:amount>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumberCounter contextRef="now" unitRef="NotUsed">5</gl-cor:lineNumberCounter>
+				<gl-cor:account>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">MTI_005</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">MUUPTJINFO2017ap</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" decimals="2" unitRef="eur">200</gl-cor:amount>
+			</gl-cor:entryDetail>
+		</gl-cor:entryHeader>
+	</gl-cor:accountingEntries>
+</xbrli:xbrl>

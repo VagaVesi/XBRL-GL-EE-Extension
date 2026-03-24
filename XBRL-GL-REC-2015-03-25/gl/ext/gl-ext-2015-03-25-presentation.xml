@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <loc xlink:type="locator" xlink:href="../bus/gl-bus-2015-03-25.xsd#gl-bus_organizationIdentifiers" xlink:label="organizationIdentifiers" xlink:title="organizationIdentifiers"/>
+    <loc xlink:type="locator" xlink:href="gl-ext-2015-03-25.xsd#gl-ext_identifierCodeType" xlink:label="identifierCodeType" xlink:title="identifierCodeType"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="organizationIdentifiers" xlink:to="identifierCodeType" xlink:title="presentation: identifierCodeType to organizationIdentifiers" order="100.0"/>
+    
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2015-03-25.xsd#gl-cor_identifierReference" xlink:label="identifierReference" xlink:title="identifierReference"/>
+    <loc xlink:type="locator" xlink:href="gl-ext-2015-03-25.xsd#gl-ext_identifierCodeType" xlink:label="identifierCodeType" xlink:title="identifierCodeType"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="identifierReference" xlink:to="identifierCodeType" xlink:title="presentation: identifierCodeType to identifierReference" order="100.0"/>
+
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2015-03-25.xsd#gl-cor_identifierReference" xlink:label="identifierReference" xlink:title="identifierReference"/>
+    <loc xlink:type="locator" xlink:href="gl-ext-2015-03-25.xsd#gl-ext_transactionPartyType" xlink:label="transactionPartyType" xlink:title="transactionPartyType"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="identifierReference" xlink:to="transactionPartyType" xlink:title="presentation: transactionPartyType to identifierReference" order="101.0"/>
+
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2015-03-25.xsd#gl-cor_entryHeader" xlink:label="entryHeader" xlink:title="entryHeader"/>
+    <loc xlink:type="locator" xlink:href="gl-ext-2015-03-25.xsd#gl-ext_sourceId" xlink:label="sourceId" xlink:title="sourceId"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="entryHeader" xlink:to="sourceId" xlink:title="presentation: sourceId to entryHeader" order="100.0"/>
+
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2015-03-25.xsd#gl-cor_entryHeader" xlink:label="entryHeader" xlink:title="entryHeader"/>
+    <loc xlink:type="locator" xlink:href="gl-ext-2015-03-25.xsd#gl-ext_sourcesCount" xlink:label="sourcesCount" xlink:title="sourcesCount"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="entryHeader" xlink:to="sourcesCount" xlink:title="presentation: sourcesCount to entryHeader" order="101.0"/>
+
+
+
+  </presentationLink>
+</linkbase>
