@@ -1,47 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
-<schema targetNamespace="http://www.xbrl.org/int/gl/ext/2015-03-25"
+<schema targetNamespace="http://www.xbrl.org/int/gl/ext/2026-03-31"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	xmlns="http://www.w3.org/2001/XMLSchema"
 	xmlns:xbrli="http://www.xbrl.org/2003/instance"
 	xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25"
-	xmlns:gl-ext="http://www.xbrl.org/int/gl/ext/2015-03-25"	
+	xmlns:gl-ext="http://www.xbrl.org/int/gl/ext/2026-03-31"	
 	elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
-	<include schemaLocation="../../ext/gl-ext-2015-03-25.xsd"/>
+	<include schemaLocation="../../ext/gl-ext-2026-03-31.xsd"/>
 	
-	<complexType name="employeeCategoryItemType">
+	<complexType name="identifierEmployeeCategoryItemType">
 		<simpleContent>
 			<restriction base="xbrli:stringItemType">
 			</restriction>
 		</simpleContent>
 	</complexType>
-	<complexType name="birthDateItemType">
+	<complexType name="identifierBirthDateItemType">
 		<simpleContent>
 			<restriction base="xbrli:dateTimeItemType">
 			</restriction>
 		</simpleContent>
 	</complexType>
-	<!-- cor: type of transaction party-->
-	<complexType name="transactionPartyTypeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-				</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="sourceIdItemType">
+	<complexType name="entrySourceIdItemType">
 		<simpleContent>
 			<restriction base="xbrli:stringItemType">
 			</restriction>
 		</simpleContent>
 	</complexType>
-	<complexType name="sourceCountItemType">
+	<complexType name="entrySourceCountItemType">
 		<simpleContent>
 			<restriction base="xbrli:stringItemType">
 				</restriction>
 		</simpleContent>
 	</complexType>
-		<complexType name="versionItemType">
+		<complexType name="entryVersionItemType">
 		<simpleContent>
 			<restriction base="xbrli:stringItemType">
 				</restriction>

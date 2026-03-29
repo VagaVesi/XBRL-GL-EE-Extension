@@ -78,7 +78,7 @@
   <element name="postingDate" id="gl-cor_postingDate" type="gl-cor:postingDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="postingStatus" id="gl-cor_postingStatus" type="gl-gen:postingStatusItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="qualifierEntry" id="gl-cor_qualifierEntry" type="gl-gen:qualifierEntryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-  <element name="reportingTreeIdentifier" id="gl-cor_" type="gl-cor:reportingTreeIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="reportingTreeIdentifier" id="gl-cor_reportingTreeIdentifier" type="gl-cor:reportingTreeIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="revisesUniqueID" id="gl-cor_revisesUniqueID" type="gl-cor:revisesUniqueIDItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="revisesUniqueIDAction" id="gl-cor_revisesUniqueIDAction" type="gl-gen:revisesUniqueIDActionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="segmentParentTuple" id="gl-cor_segmentParentTuple" type="gl-cor:segmentParentTupleComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>

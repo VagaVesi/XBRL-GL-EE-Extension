@@ -8,7 +8,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:gl-usk="http://www.xbrl.org/int/gl/usk/2015-03-25"
 	xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25"
-	xmlns:gl-ext="http://www.xbrl.org/int/gl/ext/2015-03-25"
+	xmlns:gl-ext="http://www.xbrl.org/int/gl/ext/2026-03-31"
 	xmlns:iso639="http://www.xbrl.org/2005/iso639"
 	xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
 	xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2015-03-25"
@@ -79,9 +79,9 @@
 			<gl-cor:entryNumber contextRef="now">EE0101001</gl-cor:entryNumber>
 			
 			<!-- EXTENSION for multiple data sources-->
-			<gl-ext:version contextRef="now">1.0</gl-ext:version>
-			<gl-ext:sourceId contextRef="now">Software 1</gl-ext:sourceId>
-			<gl-ext:sourceCount contextRef="now">2</gl-ext:sourceCount>
+			<gl-ext:entryVersion contextRef="now">1.0</gl-ext:entryVersion>
+			<gl-ext:entrySourceId contextRef="now">Software 1</gl-ext:entrySourceId>
+			<gl-ext:entrySourceCount contextRef="now">2</gl-ext:entrySourceCount>
 			<!-- EXTENSION end-->
 			
 			<!-- Iga eraldi esitatav raha summa nõuab eraldi kirjendi detaili (entryDetail), mille osas on vajalik esitada ka täiendav info. -->
@@ -118,14 +118,14 @@
 					<!--SA palgasektsioonis esitatakse antud välja all isikukood või mitteresidendikood. -->
 					<gl-cor:identifierCode contextRef="now">2020-12-01</gl-cor:identifierCode>
 					<!-- EXTENSION start-->
-					<gl-ext:employeeCategory contextRef="now">Free form additional category description</gl-ext:employeeCategory>
+					<gl-ext:identifierEmployeeCategory contextRef="now">Free form additional category description</gl-ext:identifierEmployeeCategory>
 					<!-- EXTENSION end-->
 					<gl-cor:identifierDescription contextRef="now">Mati Maasikas</gl-cor:identifierDescription>	
 				</gl-cor:identifierReference>
 				<gl-cor:identifierReference>
 					<gl-cor:identifierCode contextRef="now">12345678</gl-cor:identifierCode>
 					<!-- EXTENSION start-->
-					<gl-ext:birthDate contextRef="now">1970-01-01</gl-ext:birthDate>
+					<gl-ext:identifierBirthDate contextRef="now">1970-01-01</gl-ext:identifierBirthDate>
 					<!-- EXTENSION end-->
 					<gl-cor:identifierDescription contextRef="now">OÜ Puuviljad</gl-cor:identifierDescription>
 				</gl-cor:identifierReference>

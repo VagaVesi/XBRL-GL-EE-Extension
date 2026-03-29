@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
-<schema targetNamespace="http://www.xbrl.org/int/gl/ext/2015-03-25"
+<schema targetNamespace="http://www.xbrl.org/int/gl/ext/2026-03-31"
   elementFormDefault="qualified" attributeFormDefault="unqualified"
   xmlns="http://www.w3.org/2001/XMLSchema"
   xmlns:xbrll="http://www.xbrl.org/2003/linkbase"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:xbrli="http://www.xbrl.org/2003/instance"
   xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25"
-  xmlns:gl-ext="http://www.xbrl.org/int/gl/ext/2015-03-25"
+  xmlns:gl-ext="http://www.xbrl.org/int/gl/ext/2026-03-31"
   xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/2015-03-25">
   <annotation>
     <appinfo>
       <xbrll:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
-        xlink:href="gl-ext-2015-03-25-presentation.xml" xlink:title="Presentation Links, all"
+        xlink:href="gl-ext-2026-03-31-presentation.xml" xlink:title="Presentation Links, all"
         xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
     </appinfo>
   </annotation>
@@ -20,13 +20,13 @@
   <import namespace="http://www.xbrl.org/int/gl/gen/2015-03-25" schemaLocation="../gen/gl-gen-2015-03-25.xsd"/>  
   
   <!-- EXTENSION for identifiers-->
-  <element name="employeeCategory" id="gl-ext_employeeCategory" type="gl-ext:employeeCategoryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-  <element name="birthDate" id="gl-ext_birthDate" type="gl-ext:birthDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="identifierEmployeeCategory" id="gl-ext_identifierEmployeeCategory" type="gl-ext:identifierEmployeeCategoryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="identifierBirthDate" id="gl-ext_identifierBirthDate" type="gl-ext:identifierBirthDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 
   <!-- EXTENSION for multiple data sources-->
-  <element name="version" id="gl-ext_version" type="gl-ext:versionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-  <element name="sourceId" id="gl-ext_sourceId" type="gl-ext:sourceIdItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-  <element name="sourceCount" id="gl-ext_sourceCount" type="gl-ext:sourceCountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="entryVersion" id="gl-ext_entryVersion" type="gl-ext:entryVersionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="entrySourceId" id="gl-ext_entrySourceId" type="gl-ext:entrySourceIdItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="entrySourceCount" id="gl-ext_entrySourceCount" type="gl-ext:entrySourceCountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
    
      <!--EXTENSION for period-->
   <element name="periodExtraIdentifier" id="gl-ext_periodExtraIdentifier" type="gl-ext:periodExtraIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase
+  xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+  xmlns="http://www.xbrl.org/2003/linkbase"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+  <!-- EXTENSION for multiple data sources-->
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-03-31.xsd#gl-ext_entrySourceId" xlink:label="entrySourceId"/>
+    <label xlink:type="resource" xlink:label="entrySourceId_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identification for data source. Primary source should have value 1. Used in the case of multiple data sources.</label>
+    <label xlink:type="resource" xlink:label="entrySourceId_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_entrySourceId" xml:lang="en">Entry Source Identification</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entrySourceId" xlink:to="entrySourceId_lbl"/>
+
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-03-31.xsd#gl-ext_entrySourceCount" xlink:label="entrySourceCount"/>
+    <label xlink:type="resource" xlink:label="entrySourceCount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Total count of data sources. Used in the case of multiple data sources.</label>
+    <label xlink:type="resource" xlink:label="entrySourceCount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_entrySourceCount" xml:lang="en">Entry Source Count</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entrySourceCount" xlink:to="entrySourceCount_lbl"/>
+
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-03-31.xsd#gl-ext_entryVersion" xlink:label="entryVersion"/>
+    <label xlink:type="resource" xlink:label="entryVersion_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Version identifier for the entry.</label>
+    <label xlink:type="resource" xlink:label="entryVersion_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_entryVersion" xml:lang="en">Entry Version</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryVersion" xlink:to="entryVersion_lbl"/>
+
+  <!-- EXTENSION for identifiers-->
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-03-31.xsd#gl-ext_identifierEmployeeCategory" xlink:label="identifierEmployeeCategory"/>
+    <label xlink:type="resource" xlink:label="identifierEmployeeCategory_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Category classification for an employee.</label>
+    <label xlink:type="resource" xlink:label="identifierEmployeeCategory_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_identifierEmployeeCategory" xml:lang="en">Identifier Employee Category</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEmployeeCategory" xlink:to="identifierEmployeeCategory_lbl"/>
+
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-03-31.xsd#gl-ext_identifierBirthDate" xlink:label="identifierBirthDate"/>
+    <label xlink:type="resource" xlink:label="identifierBirthDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Date of birth for an identifier.</label>
+    <label xlink:type="resource" xlink:label="identifierBirthDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_identifierBirthDate" xml:lang="en">Identifier Birth Date</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierBirthDate" xlink:to="identifierBirthDate_lbl"/>
+
+  <!-- EXTENSION for period-->
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-03-31.xsd#gl-ext_periodExtraIdentifier" xlink:label="periodExtraIdentifier"/>
+    <label xlink:type="resource" xlink:label="periodExtraIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Additional identifier for the reporting period.</label>
+    <label xlink:type="resource" xlink:label="periodExtraIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_periodExtraIdentifier" xml:lang="en">Period Extra Identifier</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodExtraIdentifier" xlink:to="periodExtraIdentifier_lbl"/>
+
+
+  </labelLink>
+</linkbase>
