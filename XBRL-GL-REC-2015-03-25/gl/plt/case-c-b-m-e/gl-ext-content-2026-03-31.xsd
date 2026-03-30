@@ -22,19 +22,19 @@
 			</restriction>
 		</simpleContent>
 	</complexType>
-	<complexType name="entrySourceIdItemType">
+	<complexType name="sourceIdItemType">
 		<simpleContent>
 			<restriction base="xbrli:stringItemType">
 			</restriction>
 		</simpleContent>
 	</complexType>
-	<complexType name="entrySourceCountItemType">
+	<complexType name="sourceCountItemType">
 		<simpleContent>
 			<restriction base="xbrli:stringItemType">
 				</restriction>
 		</simpleContent>
 	</complexType>
-		<complexType name="entryVersionItemType">
+		<complexType name="versionItemType">
 		<simpleContent>
 			<restriction base="xbrli:stringItemType">
 				</restriction>
