@@ -14,5 +14,5 @@
 			<link:linkbaseRef xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../../ext/lang/gl-ext-2026-03-31-label.xml" xlink:title="Label Links, all"/>
 		</xs:appinfo>
 	</xs:annotation>
-	<xs:import namespace="http://www.xbrl.org/int/gl/cor/2015-03-25" schemaLocation="gl-cor-content-2015-03-25.xsd"/>
+	<xs:import namespace="http://www.xbrl.org/int/gl/cor/2015-03-25" schemaLocation="gl-cor-content-2026-03-31.xsd"/>
 </xs:schema>
