@@ -14,7 +14,7 @@
 	xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2015-03-25"
 	xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2015-03-25"
 	xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2015-03-25">
-	<xbrll:schemaRef xlink:href="../plt/case-c-b-m-e/gl-plt-2015-03-25.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
+	<xbrll:schemaRef xlink:href="../plt/case-c-b-m-e/gl-plt-2026-03-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
 	<!-- Vastavalt XBRL 2.1 spetsifikatsioonile on Contexts osa kohustuslik. -->
 	<xbrli:context id="now">
 		<!-- Aruande esitaja äriregistrikood (kelle osas andmeid esitatakse). -->
