@@ -8,7 +8,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:gl-usk="http://www.xbrl.org/int/gl/usk/2015-03-25"
 	xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25"
-	xmlns:gl-ext="http://www.xbrl.org/int/gl/ext/2026-03-31"
+	xmlns:gl-ext="https://xbrl.eesti.ee/gl/ext/2026-03-31"
 	xmlns:iso639="http://www.xbrl.org/2005/iso639"
 	xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
 	xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2015-03-25"
