@@ -15,17 +15,17 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="identifierReference" xlink:to="identifierBirthDate" xlink:title="presentation: identifierBirthDate to identifierReference" order="101.0"/>
 
     <loc xlink:type="locator" xlink:href="../cor/gl-cor-2015-03-25.xsd#gl-cor_entryHeader" xlink:label="entryHeader" xlink:title="entryHeader"/>
-    <loc xlink:type="locator" xlink:href="gl-ext-2026-03-31.xsd#gl-ext_version" xlink:label="version" xlink:title="version"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="entryHeader" xlink:to="version" xlink:title="presentation: version to entryHeader" order="102.0"/>
+    <loc xlink:type="locator" xlink:href="gl-ext-2026-03-31.xsd#gl-ext_entryVersion" xlink:label="entryVersion" xlink:title="entryVersion"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="entryHeader" xlink:to="entryVersion" xlink:title="presentation: entryVersion to entryHeader" order="102.0"/>
 
 
     <loc xlink:type="locator" xlink:href="../cor/gl-cor-2015-03-25.xsd#gl-cor_entryHeader" xlink:label="entryHeader" xlink:title="entryHeader"/>
-    <loc xlink:type="locator" xlink:href="gl-ext-2026-03-31.xsd#gl-ext_sourceId" xlink:label="sourceId" xlink:title="sourceId"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="entryHeader" xlink:to="sourceId" xlink:title="presentation: sourceId to entryHeader" order="103.0"/>
+    <loc xlink:type="locator" xlink:href="gl-ext-2026-03-31.xsd#gl-ext_entrySourceId" xlink:label="entrySourceId" xlink:title="entrySourceId"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="entryHeader" xlink:to="entrySourceId" xlink:title="presentation: entrySourceId to entryHeader" order="103.0"/>
 
     <loc xlink:type="locator" xlink:href="../cor/gl-cor-2015-03-25.xsd#gl-cor_entryHeader" xlink:label="entryHeader" xlink:title="entryHeader"/>
-    <loc xlink:type="locator" xlink:href="gl-ext-2026-03-31.xsd#gl-ext_sourceCount" xlink:label="sourceCount" xlink:title="sourceCount"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="entryHeader" xlink:to="sourceCount" xlink:title="presentation: sourceCount to entryHeader" order="104.0"/>
+    <loc xlink:type="locator" xlink:href="gl-ext-2026-03-31.xsd#gl-ext_entrySourceCount" xlink:label="entrySourceCount" xlink:title="entrySourceCount"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="entryHeader" xlink:to="entrySourceCount" xlink:title="presentation: entrySourceCount to entryHeader" order="104.0"/>
 
   <loc xlink:type="locator" xlink:href="../cor/gl-cor-2015-03-25.xsd#gl-cor_documentInfo" xlink:label="documentInfo" xlink:title="documentInfo"/>
     <loc xlink:type="locator" xlink:href="gl-ext-2026-03-31.xsd#gl-ext_periodExtraIdentifier" xlink:label="periodExtraIdentifier" xlink:title="periodExtraIdentifier"/>

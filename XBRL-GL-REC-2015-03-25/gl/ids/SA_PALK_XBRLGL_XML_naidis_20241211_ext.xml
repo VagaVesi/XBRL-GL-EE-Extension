@@ -79,9 +79,9 @@
 			<gl-cor:entryNumber contextRef="now">EE0101001</gl-cor:entryNumber>
 			
 			<!-- EXTENSION for multiple data sources-->
-			<gl-ext:version contextRef="now">1.0</gl-ext:version>
-			<gl-ext:sourceId contextRef="now">Software 1</gl-ext:sourceId>
-			<gl-ext:sourceCount contextRef="now">2</gl-ext:sourceCount>
+			<gl-ext:entryVersion contextRef="now">1.0</gl-ext:entryVersion>
+			<gl-ext:entrySourceId contextRef="now">Software 1</gl-ext:entrySourceId>
+			<gl-ext:entrySourceCount contextRef="now">2</gl-ext:entrySourceCount>
 			<!-- EXTENSION end-->
 			
 			<!-- Iga eraldi esitatav raha summa nõuab eraldi kirjendi detaili (entryDetail), mille osas on vajalik esitada ka täiendav info. -->

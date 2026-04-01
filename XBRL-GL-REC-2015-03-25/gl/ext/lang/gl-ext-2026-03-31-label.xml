@@ -6,23 +6,23 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xlink="http://www.w3.org/1999/xlink">
   <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
-  <!-- gl-ext:sourceId -->
-    <loc xlink:type="locator" xlink:href="../gl-ext-2026-03-31.xsd#gl-ext_sourceId" xlink:label="sourceId"/>
-    <label xlink:type="resource" xlink:label="sourceId_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Specifies source identification.</label>
-    <label xlink:type="resource" xlink:label="sourceId_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_sourceId_en" xml:lang="en">Source Identification</label>
-    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="sourceId" xlink:to="sourceId_lbl"/>
+  <!-- gl-ext:entrySourceId -->
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-03-31.xsd#gl-ext_entrySourceId" xlink:label="entrySourceId"/>
+    <label xlink:type="resource" xlink:label="entrySourceId_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Specifies entry source identification.</label>
+    <label xlink:type="resource" xlink:label="entrySourceId_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_entrySourceId_en" xml:lang="en">Entry Source Identification</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entrySourceId" xlink:to="entrySourceId_lbl"/>
 
-  <!-- gl-ext:sourceCount -->
-    <loc xlink:type="locator" xlink:href="../gl-ext-2026-03-31.xsd#gl-ext_sourceCount" xlink:label="sourceCount"/>
-    <label xlink:type="resource" xlink:label="sourceCount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Specifies source count.</label>
-    <label xlink:type="resource" xlink:label="sourceCount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_sourceCount_en" xml:lang="en">Source Count</label>
-    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="sourceCount" xlink:to="sourceCount_lbl"/>
+  <!-- gl-ext:entrySourceCount -->
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-03-31.xsd#gl-ext_entrySourceCount" xlink:label="entrySourceCount"/>
+    <label xlink:type="resource" xlink:label="entrySourceCount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Specifies entry source count.</label>
+    <label xlink:type="resource" xlink:label="entrySourceCount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_entrySourceCount_en" xml:lang="en">Entry Source Count</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entrySourceCount" xlink:to="entrySourceCount_lbl"/>
 
-  <!-- gl-ext:version -->
-    <loc xlink:type="locator" xlink:href="../gl-ext-2026-03-31.xsd#gl-ext_version" xlink:label="version"/>
-    <label xlink:type="resource" xlink:label="version_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Specifies version.</label>
-    <label xlink:type="resource" xlink:label="version_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_version_en" xml:lang="en">Version</label>
-    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="version" xlink:to="version_lbl"/>
+  <!-- gl-ext:entryVersion -->
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-03-31.xsd#gl-ext_entryVersion" xlink:label="entryVersion"/>
+    <label xlink:type="resource" xlink:label="entryVersion_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Specifies entry version.</label>
+    <label xlink:type="resource" xlink:label="entryVersion_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_entryVersion_en" xml:lang="en">Entry Version</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryVersion" xlink:to="entryVersion_lbl"/>
 
   <!-- gl-ext:identifierEmployeeCategory -->
     <loc xlink:type="locator" xlink:href="../gl-ext-2026-03-31.xsd#gl-ext_identifierEmployeeCategory" xlink:label="identifierEmployeeCategory"/>

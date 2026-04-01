@@ -144,9 +144,9 @@
 					<element ref="gl-bus:budgetAllocationCode" minOccurs="0" maxOccurs="1"/>
 					<element ref="gl-cor:entryNumberCounter" minOccurs="0" maxOccurs="1"/>			
 					<!-- EXTENSION for multiple data sources-->
-					<element ref="gl-ext:version" minOccurs="0" maxOccurs="1"/>
-					<element ref="gl-ext:sourceId" minOccurs="0" maxOccurs="1"/>
-					<element ref="gl-ext:sourceCount" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ext:entryVersion" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ext:entrySourceId" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ext:entrySourceCount" minOccurs="0" maxOccurs="1"/>
 					<!-- EXTENSION end-->
 					<element ref="gl-cor:entryDetail" minOccurs="0" maxOccurs="unbounded"/>
 				</sequence>
