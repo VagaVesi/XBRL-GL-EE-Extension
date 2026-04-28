@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
 <xs:schema 
-	targetNamespace="http://www.xbrl.org/int/gl/plt/2015-03-25" 
+	targetNamespace="https://xbrl.eesti.ee/gl/plt/2026-03-31"
 	attributeFormDefault="unqualified" elementFormDefault="qualified" 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:xlink="http://www.w3.org/1999/xlink" 

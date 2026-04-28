@@ -1,17 +1,15 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- Andmepõhise Aruandluse SA palga- ja tööjõukulude näidisaruande fail XBRL Global Ledger standardi baasil Version 2017.1.0 -->
 <!-- This file is the example of representing job cost information based on XBRL GL standard Version 2017.1.0 -->
 <!-- The "root" of every XBRL file ("instance document") is xbrl. -->
 <xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
-	xmlns:xbrll="http://www.xbrl.org/2003/linkbase" xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2015-03-25 ../plt/case-c-b-m-u-t/gl-plt-all-2015-03-25.xsd"
+	xmlns:xbrll="http://www.xbrl.org/2003/linkbase" xsi:schemaLocation="https://xbrl.eesti.ee/gl/plt/2026-03-31 ../plt/case-c-b-m-e/gl-plt-2026-03-31.xsd"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:gl-usk="http://www.xbrl.org/int/gl/usk/2015-03-25"
 	xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25"
 	xmlns:gl-ext="https://xbrl.eesti.ee/gl/ext/2026-03-31"
 	xmlns:iso639="http://www.xbrl.org/2005/iso639"
 	xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
-	xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2015-03-25"
 	xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2015-03-25"
 	xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2015-03-25">
 	<xbrll:schemaRef xlink:href="../plt/case-c-b-m-e/gl-plt-2026-03-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
@@ -23,7 +21,7 @@
 		</xbrli:entity>
 		<!-- Faili loomise kuupäev -->
 		<xbrli:period>
-			<xbrli:instant>2024-11-01</xbrli:instant>
+			<xbrli:instant>2026-11-01</xbrli:instant>
 		</xbrli:period>
 	</xbrli:context>
 	<!-- Mõõtühikutena vaadeldakse nii valuutat kui ka muid kokkulepitud mõõtühikuid -->
@@ -40,18 +38,18 @@
 			<!-- XBRL GL standardist lähtuv valik. Palgaandmete puhul kasutada tehingutüübiks "other" (muu). -->
 			<gl-cor:entriesType contextRef="now">other</gl-cor:entriesType>
 			<!-- Aruande unikaalne tunnus, mille peab tagama andmeesitaja. Tuleb esitada järgneva struktuuriga: asutuse äriregistrikood (kelle andmeid esitatakse) + aruande kuupäev + kellaaeg -->
-			<gl-cor:uniqueID contextRef="now">10001234-2024-12-15T09:36:51:554</gl-cor:uniqueID>
+			<gl-cor:uniqueID contextRef="now">10001234-2026-12-15T09:36:51:554</gl-cor:uniqueID>
 			<!-- Aruandele kehtestatud keeleks on eesti keel -->
 			<gl-cor:language contextRef="now">iso639:et</gl-cor:language>
 			<!--Aruande koostamise kuupäev -->
-			<gl-cor:creationDate contextRef="now">2024-12-15</gl-cor:creationDate>
+			<gl-cor:creationDate contextRef="now">2026-12-15</gl-cor:creationDate>
 			<!--Aruande looja -->
 			<gl-bus:creator contextRef="now">Testettevõte</gl-bus:creator>
 			<!--Aruande selgitus, valikuline väli -->
 			<gl-cor:entriesComment contextRef="now">SA näidis palga ja tööjõu Andmepõhise Aruandluse tarbeks</gl-cor:entriesComment>
 			<!-- Aruandeperioon, algus- ja lõpukuupäev -->
-			<gl-cor:periodCoveredStart contextRef="now">2024-11-01</gl-cor:periodCoveredStart>
-			<gl-cor:periodCoveredEnd contextRef="now">2024-11-30</gl-cor:periodCoveredEnd>
+			<gl-cor:periodCoveredStart contextRef="now">2026-11-01</gl-cor:periodCoveredStart>
+			<gl-cor:periodCoveredEnd contextRef="now">2026-11-30</gl-cor:periodCoveredEnd>
 			<!-- EXTENSION for period extra info-->
 			<gl-ext:periodExtraIdentifier contextRef="now">PANKROTIS</gl-ext:periodExtraIdentifier>
 			<!-- EXTENSION end-->

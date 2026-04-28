@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="et">
+  <head>
+    <meta charset="UTF-8" />
+    <title>XBRL GL taksonoomia laiendus (EE-Extension 2026-03-31)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #333;
+        background: #f4f4f4;
+        margin: 0;
+      }
+      header {
+        background: #1a4480;
+        color: #fff;
+        padding: 20px 40px;
+        border-bottom: 4px solid #ffcc00;
+      }
+      header a {
+        color: #fff;
+        text-decoration: none;
+      }
+      header .site-title {
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+      }
+      nav.crumbs {
+        background: #e8e8e8;
+        padding: 8px 40px;
+        font-size: 13px;
+        color: #555;
+      }
+      nav.crumbs a {
+        color: #1a4480;
+        text-decoration: none;
+      }
+      nav.crumbs a:hover {
+        text-decoration: underline;
+      }
+      main {
+        max-width: 880px;
+        margin: 30px auto;
+        background: #fff;
+        padding: 40px 50px;
+        border: 1px solid #ddd;
+      }
+      h1 {
+        color: #1a4480;
+        font-size: 26px;
+        border-bottom: 2px solid #ffcc00;
+        padding-bottom: 10px;
+        margin-top: 0;
+      }
+      h2 {
+        color: #1a4480;
+        font-size: 20px;
+        margin-top: 32px;
+        border-left: 4px solid #ffcc00;
+        padding-left: 10px;
+      }
+      h3 {
+        color: #333;
+        font-size: 16px;
+        margin-top: 24px;
+      }
+      a {
+        color: #1a4480;
+      }
+      code,
+      pre {
+        font-family: Menlo, Consolas, monospace;
+        font-size: 13px;
+      }
+      pre {
+        background: #f7f7f7;
+        border: 1px solid #e0e0e0;
+        padding: 12px 14px;
+        overflow-x: auto;
+      }
+      ul {
+        padding-left: 22px;
+      }
+      li {
+        margin-bottom: 4px;
+      }
+      .field-list li {
+        margin-bottom: 8px;
+      }
+      .field-list code {
+        background: #f0f4fa;
+        padding: 1px 5px;
+        border-radius: 3px;
+      }
+      .download {
+        background: #f0f4fa;
+        border-left: 4px solid #1a4480;
+        padding: 14px 18px;
+        margin: 20px 0;
+      }
+      footer {
+        text-align: center;
+        color: #777;
+        font-size: 12px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="site-title">
+        <a href="https://xbrl.eesti.ee/">EESTI XBRL TAKSONOOMIAD</a>
+      </div>
+    </header>
+    <nav class="crumbs">
+      <a href="https://xbrl.eesti.ee/">Avaleht</a> / XBRL GL taksonoomia
+      laiendus 2026-03-31
+    </nav>
+
+    <main>
+      <h1>XBRL GL taksonoomia laiendus (EE-Extension 2026-03-31)</h1>
+
+      <h2>Mis on XBRL GL?</h2>
+      <p>
+        XBRL GL (Global Ledger Taxonomy Framework) on rahvusvaheline standardne
+        taksonoomia detailsete raamatupidamise ja äritehingute andmete
+        vahetamiseks. Erinevalt aruandluse-kesksetest XBRL taksonoomiatest on
+        XBRL GL mõeldud tehingu-tasemel andmete (pearaamatu kanded,
+        palgaarvestus, müügi- ja ostuarved jms) struktureeritud edastamiseks
+        süsteemide vahel või andmete vastuvõtjale.
+      </p>
+      <p>
+        Lisainformatsioon ametlikult XBRL Internationalilt:
+        <a
+          href="https://www.xbrl.org/the-standard/what/gl/"
+          target="_blank"
+          rel="noopener"
+        >
+          https://www.xbrl.org/the-standard/what/gl/
+        </a>
+      </p>
+      <p>
+        Käesolev laiendus põhineb XBRL GL REC 2015-03-25 versioonil ja on
+        kohandatud Eesti aruandluse vajadustele (nt MTA KMD APA, SA palk ja
+        tööjõud).
+      </p>
+
+      <h2>Laienduse kohta</h2>
+
+      <h3>Nimeruumid (namespaces)</h3>
+      <ul>
+        <li>
+          <code>gl-ext</code>:
+          <code>https://xbrl.eesti.ee/gl/ext/2026-03-31</code>
+        </li>
+        <li>
+          <code>gl-plt</code>:
+          <code>https://xbrl.eesti.ee/gl/plt/2026-03-31</code>
+        </li>
+        <li>
+          <code>gl-cor</code>, <code>gl-bus</code>, <code>gl-muc</code>,
+          <code>gl-gen</code>: standardne XBRL GL
+          (<code>http://www.xbrl.org/int/gl/...</code>)
+        </li>
+      </ul>
+
+      <h3>Lisanduvad andmeväljad</h3>
+      <ul class="field-list">
+        <li>
+          <code>entrySourceId</code> (string, optional) — andmeallika ID.
+          Kasutatakse juhul kui andmeid saadetakse mitmest allikast.
+        </li>
+        <li>
+          <code>entrySourceCount</code> (int, optional) — andmeallikate arv
+          kokku.
+        </li>
+        <li>
+          <code>periodExtraIdentifier</code> (string, optional) — sama perioodi
+          sees esitatavate tehingute andmete eristamiseks (nt pankroti protsessi
+          tehingute eristamiseks).
+        </li>
+        <li>
+          <code>identifierEmployeeCategory</code> (string, optional) —
+          vabatekstiline väli töötaja kategooria täpsustamiseks.
+        </li>
+        <li>
+          <code>identifierBirthDate</code> (date, optional) — eraisiku
+          sünnikuupäev.
+        </li>
+        <li>
+          <code>entryVersion</code> (string, optional) — andmesektsiooni
+          versioonile viide. Kui ei saadeta versiooni infot, kasutatakse
+          vaikimisi versiooni 1.0 (vaikeväärtus rakendub andmete vastuvõtja
+          poolel).
+        </li>
+      </ul>
+
+      <h3>Valideerimiseks kasutatavad schemad (entry points)</h3>
+      <ul>
+        <li>
+          <code>2026-03-31/gl/plt/case-c-b-e/gl-plt-2026-03-31.xsd</code><br />
+          cor + bus + ext, ilma muc-ta — KMD APA jaoks
+        </li>
+        <li>
+          <code>2026-03-31/gl/plt/case-c-b-m-e/gl-plt-2026-03-31.xsd</code
+          ><br />
+          cor + bus + muc + ext — palga ja tööjõu andmete jaoks
+        </li>
+      </ul>
+
+      <h3>Näidisfailid</h3>
+      <ul>
+        <li>
+          <a href="2026-03-31/gl/ids/MTA_KMD_APA_XBRL_GL_naidis_20260427.xml"
+            >MTA_KMD_APA_XBRL_GL_naidis_20260427.xml</a
+          >
+          — KMD APA näidis (valideerub case-c-b-e)
+        </li>
+        <li>
+          <a href="2026-03-31/gl/ids/SA_PALK_XBRLGL_XML_naidis_20241211_ext.xml"
+            >SA_PALK_XBRLGL_XML_naidis_20241211_ext.xml</a
+          >
+          — palga ja tööjõu näidis (valideerub case-c-b-m-e)
+        </li>
+      </ul>
+
+      <h3>Näide xsi:schemaLocation kasutamisest</h3>
+      <pre>
+xsi:schemaLocation="https://xbrl.eesti.ee/gl/plt/2026-03-31 ../plt/case-c-b-e/gl-plt-2026-03-31.xsd"</pre
+      >
+
+      <h3>Avaldamise märkus</h3>
+      <p>
+        Näidisfailides on <code>schemaRef</code> ja
+        <code>xsi:schemaLocation</code> hrefid suhtelised teed, mis töötavad
+        ainult lokaalse kausta struktuuriga. Kui taksonoomia on avaldatud
+        aadressil <code>https://xbrl.eesti.ee/gl/...</code>, peavad andmete
+        edastajad asendama suhtelised teed absoluutsete URLidega:
+      </p>
+      <pre>
+&lt;xbrll:schemaRef xlink:href="https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-e/gl-plt-2026-03-31.xsd" .../&gt;
+xsi:schemaLocation="https://xbrl.eesti.ee/gl/plt/2026-03-31 https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-e/gl-plt-2026-03-31.xsd"</pre
+      >
+      <p>
+        Nimeruumi URI (<code>https://xbrl.eesti.ee/gl/plt/2026-03-31</code>)
+        jääb samaks — see on identifikaator, mitte allalaadimise URL.
+      </p>
+
+      <div class="download">
+        <strong>Allalaadimine:</strong>
+        Kogu taksonoomia laiendus pakitud kujul —
+        <a href="zip/xbrl-gl-ee-ext-2026-03-31.zip"
+          >xbrl-gl-ee-ext-2026-03-31.zip</a
+        >
+        <br />
+        Täielik tehniline kirjeldus: <a href="README.txt">README.txt</a>
+      </div>
+    </main>
+
+    <footer>XBRL GL EE-Extension 2026-03-31</footer>
+  </body>
+</html>

@@ -6,9 +6,7 @@
   xmlns:xbrll="http://www.xbrl.org/2003/linkbase"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:xbrli="http://www.xbrl.org/2003/instance"
-  xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25"
-  xmlns:gl-ext="https://xbrl.eesti.ee/gl/ext/2026-03-31"
-  xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/2015-03-25">
+  xmlns:gl-ext="https://xbrl.eesti.ee/gl/ext/2026-03-31">
   <annotation>
     <appinfo>
       <xbrll:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
@@ -17,7 +15,6 @@
     </appinfo>
   </annotation>
   <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
-  <import namespace="http://www.xbrl.org/int/gl/gen/2015-03-25" schemaLocation="../gen/gl-gen-2015-03-25.xsd"/>  
   
   <!-- EXTENSION for identifiers-->
   <element name="identifierEmployeeCategory" id="gl-ext_identifierEmployeeCategory" type="gl-ext:identifierEmployeeCategoryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>

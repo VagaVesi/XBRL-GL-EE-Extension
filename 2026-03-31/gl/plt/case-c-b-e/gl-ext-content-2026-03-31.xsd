@@ -4,7 +4,6 @@
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	xmlns="http://www.w3.org/2001/XMLSchema"
 	xmlns:xbrli="http://www.xbrl.org/2003/instance"
-	xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25"
 	xmlns:gl-ext="https://xbrl.eesti.ee/gl/ext/2026-03-31"	
 	elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
@@ -18,7 +17,7 @@
 	</complexType>
 	<complexType name="identifierBirthDateItemType">
 		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
+			<restriction base="xbrli:dateItemType">
 			</restriction>
 		</simpleContent>
 	</complexType>

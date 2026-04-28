@@ -18,7 +18,6 @@
     <loc xlink:type="locator" xlink:href="gl-ext-2026-03-31.xsd#gl-ext_entryVersion" xlink:label="entryVersion" xlink:title="entryVersion"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="entryHeader" xlink:to="entryVersion" xlink:title="presentation: entryVersion to entryHeader" order="102.0"/>
 
-
     <loc xlink:type="locator" xlink:href="../cor/gl-cor-2015-03-25.xsd#gl-cor_entryHeader" xlink:label="entryHeader" xlink:title="entryHeader"/>
     <loc xlink:type="locator" xlink:href="gl-ext-2026-03-31.xsd#gl-ext_entrySourceId" xlink:label="entrySourceId" xlink:title="entrySourceId"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="entryHeader" xlink:to="entrySourceId" xlink:title="presentation: entrySourceId to entryHeader" order="103.0"/>
@@ -30,8 +29,6 @@
   <loc xlink:type="locator" xlink:href="../cor/gl-cor-2015-03-25.xsd#gl-cor_documentInfo" xlink:label="documentInfo" xlink:title="documentInfo"/>
     <loc xlink:type="locator" xlink:href="gl-ext-2026-03-31.xsd#gl-ext_periodExtraIdentifier" xlink:label="periodExtraIdentifier" xlink:title="periodExtraIdentifier"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="documentInfo" xlink:to="periodExtraIdentifier" xlink:title="presentation: periodExtraIdentifier to documentInfo" order="101.0"/>
-
-
 
   </presentationLink>
 </linkbase>
