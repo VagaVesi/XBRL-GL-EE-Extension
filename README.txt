@@ -36,14 +36,10 @@ Laiendustest on mõjutatud järgnevad schemad:
 - gl-cor-content-2026-03-31.xsd
 - gl-ext-content-2026-03-31.xsd
 
-Näide xsi:schemaLocation kasutamisest XML failis:
-xsi:schemaLocation="https://xbrl.eesti.ee/gl/plt/2026-03-31 ../plt/case-c-b-e/gl-plt-2026-03-31.xsd"
-
-Märkus avaldamise kohta (publish):
-Näidisfailides on schemaRef ja xsi:schemaLocation hrefid suhtelised teed (nt ../plt/case-c-b-e/gl-plt-2026-03-31.xsd), mis töötab ainult lokaalse kausta struktuuriga. Kui taksonoomia on avaldatud aadressil https://xbrl.eesti.ee/gl/..., peavad andmete edastajad asendama suhtelised teed absoluutsete URLidega, näiteks:
-  <xbrll:schemaRef xlink:href="https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-e/gl-plt-2026-03-31.xsd" .../>
+Näide xsi:schemaLocation ja schemaRef kasutamisest XML failis:
+  <xbrll:schemaRef xlink:href="https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-e/gl-plt-2026-03-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
   xsi:schemaLocation="https://xbrl.eesti.ee/gl/plt/2026-03-31 https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-e/gl-plt-2026-03-31.xsd"
-Nimeruumi URI (https://xbrl.eesti.ee/gl/plt/2026-03-31) jääb samaks — see on identifikaator, mitte allalaadimise URL.
+Nimeruumi URI (https://xbrl.eesti.ee/gl/plt/2026-03-31) on identifikaator, mitte allalaadimise URL — see jääb alati samaks.
 
 
 ENG: XBRL GL Taxonomy Extension (EE-Extension 2026-03-31)
@@ -84,11 +80,7 @@ Schemas affected by the extensions:
 - gl-cor-content-2026-03-31.xsd
 - gl-ext-content-2026-03-31.xsd
 
-Example of xsi:schemaLocation usage in an XML file:
-xsi:schemaLocation="https://xbrl.eesti.ee/gl/plt/2026-03-31 ../plt/case-c-b-e/gl-plt-2026-03-31.xsd"
-
-Publishing note:
-The sample files use relative hrefs in schemaRef and xsi:schemaLocation (e.g. ../plt/case-c-b-e/gl-plt-2026-03-31.xsd), which only resolve when the files sit next to the local taxonomy folders. Once the taxonomy is hosted at https://xbrl.eesti.ee/gl/..., data submitters must replace the relative paths with the absolute URLs, for example:
-  <xbrll:schemaRef xlink:href="https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-e/gl-plt-2026-03-31.xsd" .../>
+Example of xsi:schemaLocation and schemaRef usage in an XML file:
+  <xbrll:schemaRef xlink:href="https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-e/gl-plt-2026-03-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
   xsi:schemaLocation="https://xbrl.eesti.ee/gl/plt/2026-03-31 https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-e/gl-plt-2026-03-31.xsd"
-The namespace URI (https://xbrl.eesti.ee/gl/plt/2026-03-31) stays the same — it is an identifier, not a download URL.
+The namespace URI (https://xbrl.eesti.ee/gl/plt/2026-03-31) is an identifier, not a download URL — it always stays the same.
