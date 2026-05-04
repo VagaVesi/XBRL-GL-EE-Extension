@@ -2,9 +2,11 @@
 <!-- Andmepõhise Aruandluse SA palga- ja tööjõukulude näidisaruande fail XBRL Global Ledger standardi baasil Version 2017.1.0 -->
 <!-- This file is the example of representing job cost information based on XBRL GL standard Version 2017.1.0 -->
 <!-- The "root" of every XBRL file ("instance document") is xbrl. -->
+<!-- schema location "https://xbrl.eesti.ee/gl/ext/2026-03-31 change-->
+
 <xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
-	xmlns:xbrll="http://www.xbrl.org/2003/linkbase" xsi:schemaLocation="https://xbrl.eesti.ee/gl/plt/2026-03-31 ../plt/case-c-b-m-e/gl-plt-2026-03-31.xsd"
+	xmlns:xbrll="http://www.xbrl.org/2003/linkbase" xsi:schemaLocation="https://xbrl.eesti.ee/gl/plt/2026-03-31 https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-m-e/gl-plt-2026-03-31.xsd"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25"
 	xmlns:gl-ext="https://xbrl.eesti.ee/gl/ext/2026-03-31"
@@ -12,7 +14,7 @@
 	xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
 	xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2015-03-25"
 	xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2015-03-25">
-	<xbrll:schemaRef xlink:href="../plt/case-c-b-m-e/gl-plt-2026-03-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
+	<xbrll:schemaRef xlink:href="https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-m-e/gl-plt-2026-03-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
 	<!-- Vastavalt XBRL 2.1 spetsifikatsioonile on Contexts osa kohustuslik. -->
 	<xbrli:context id="now">
 		<!-- Aruande esitaja äriregistrikood (kelle osas andmeid esitatakse). -->

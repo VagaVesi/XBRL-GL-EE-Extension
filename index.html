@@ -230,26 +230,14 @@
         </li>
       </ul>
 
-      <h3>Näide xsi:schemaLocation kasutamisest</h3>
+      <h3>Näide xsi:schemaLocation ja schemaRef kasutamisest</h3>
       <pre>
-xsi:schemaLocation="https://xbrl.eesti.ee/gl/plt/2026-03-31 ../plt/case-c-b-e/gl-plt-2026-03-31.xsd"</pre
-      >
-
-      <h3>Avaldamise märkus</h3>
-      <p>
-        Näidisfailides on <code>schemaRef</code> ja
-        <code>xsi:schemaLocation</code> hrefid suhtelised teed, mis töötavad
-        ainult lokaalse kausta struktuuriga. Kui taksonoomia on avaldatud
-        aadressil <code>https://xbrl.eesti.ee/gl/...</code>, peavad andmete
-        edastajad asendama suhtelised teed absoluutsete URLidega:
-      </p>
-      <pre>
-&lt;xbrll:schemaRef xlink:href="https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-e/gl-plt-2026-03-31.xsd" .../&gt;
+&lt;xbrll:schemaRef xlink:href="https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-e/gl-plt-2026-03-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/&gt;
 xsi:schemaLocation="https://xbrl.eesti.ee/gl/plt/2026-03-31 https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-e/gl-plt-2026-03-31.xsd"</pre
       >
       <p>
-        Nimeruumi URI (<code>https://xbrl.eesti.ee/gl/plt/2026-03-31</code>)
-        jääb samaks — see on identifikaator, mitte allalaadimise URL.
+        Nimeruumi URI (<code>https://xbrl.eesti.ee/gl/plt/2026-03-31</code>) on
+        identifikaator, mitte allalaadimise URL — see jääb alati samaks.
       </p>
 
       <div class="download">

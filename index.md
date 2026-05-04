@@ -53,26 +53,15 @@ Eesti aruandluse vajadustele (nt MTA KMD APA, SA palk ja tööjõud).
 - [SA_PALK_XBRLGL_XML_naidis_20241211_ext.xml](2026-03-31/gl/ids/SA_PALK_XBRLGL_XML_naidis_20241211_ext.xml)
   — palga ja tööjõu näidis (valideerub case-c-b-m-e)
 
-### Näide xsi:schemaLocation kasutamisest
+### Näide xsi:schemaLocation ja schemaRef kasutamisest
 
 ```xml
-xsi:schemaLocation="https://xbrl.eesti.ee/gl/plt/2026-03-31 ../plt/case-c-b-e/gl-plt-2026-03-31.xsd"
-```
-
-### Avaldamise märkus
-
-Näidisfailides on `schemaRef` ja `xsi:schemaLocation` hrefid suhtelised teed,
-mis töötavad ainult lokaalse kausta struktuuriga. Kui taksonoomia on avaldatud
-aadressil `https://xbrl.eesti.ee/gl/...`, peavad andmete edastajad asendama
-suhtelised teed absoluutsete URLidega:
-
-```xml
-<xbrll:schemaRef xlink:href="https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-e/gl-plt-2026-03-31.xsd" .../>
+<xbrll:schemaRef xlink:href="https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-e/gl-plt-2026-03-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
 xsi:schemaLocation="https://xbrl.eesti.ee/gl/plt/2026-03-31 https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-e/gl-plt-2026-03-31.xsd"
 ```
 
-Nimeruumi URI (`https://xbrl.eesti.ee/gl/plt/2026-03-31`) jääb samaks — see on
-identifikaator, mitte allalaadimise URL.
+Nimeruumi URI (`https://xbrl.eesti.ee/gl/plt/2026-03-31`) on identifikaator,
+mitte allalaadimise URL — see jääb alati samaks.
 
 ---
 

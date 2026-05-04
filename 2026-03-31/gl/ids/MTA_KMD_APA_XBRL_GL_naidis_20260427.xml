@@ -1,18 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Käibemaksuga seotud tehingute ja toimingute andmete andmepõhise aruandluse näidisfail XBRL Global Ledger standardi baasil -->
 <!-- The "root" of every XBRL file ("instance document") is xbrl. -->
+<!-- schema location "https://xbrl.eesti.ee/gl/ext/2026-03-31 change-->
 <xbrli:xbrl
 	xmlns:xbrli="http://www.xbrl.org/2003/instance"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	xmlns:xbrll="http://www.xbrl.org/2003/linkbase"
-    xsi:schemaLocation="https://xbrl.eesti.ee/gl/plt/2026-03-31 ../plt/case-c-b-e/gl-plt-2026-03-31.xsd"
+    xsi:schemaLocation="https://xbrl.eesti.ee/gl/plt/2026-03-31 https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-e/gl-plt-2026-03-31.xsd"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25"
 	xmlns:gl-ext="https://xbrl.eesti.ee/gl/ext/2026-03-31"
 	xmlns:iso639="http://www.xbrl.org/2005/iso639"
 	xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
 	xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2015-03-25">
-	<xbrll:schemaRef xlink:href="../plt/case-c-b-e/gl-plt-2026-03-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
+	<xbrll:schemaRef xlink:href="https://xbrl.eesti.ee/gl/ext/2026-03-31/gl/plt/case-c-b-e/gl-plt-2026-03-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
 	<!-- Contexts, on kohustuslik. Vastavalt XBRL spetsifikatsioonile -->
 	<xbrli:context id="now">
 <!-- Järgnevas plokis näidatakse isiku registrikood (kelle osas andmeid edastatakse). Peab olema sama väärtus, mis on näidatud 
